@@ -7,3 +7,5 @@ RUN unzip awscliv2.zip
 RUN ./aws/install
 COPY scripts/release.sh /usr/bin/release
 RUN chmod +x /usr/bin/release
+COPY scrips/push-image /usr/bin/pushimage
+RUN chmod +x /usr/bin/pushimage
