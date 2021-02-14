@@ -19,7 +19,6 @@ GOOGLE_APPLICATION_CREDENTIALS="/tmp/key-file.json"
 @click.option("--tag", "-t", default="BITBUCKET_COMMIT", help="tag to be applied to this deploy")
 @click.option("--deploy_env", "-e", default="BITBUCKET_DEPLOYMENT_ENVIRONMENT", help="environment to be applied to this deploy")
 @click.option("--deploy-type", "-d", default="gcp", help="type of deploy. Can be gcp, aws or multi")
-
 def deploy_helm(chart_name, gcp_project, gcp_key, aws_key, gcp_cluster, aws_cluster, tag, deploy_env, deploy_type):
     """Tool to deploy k8s by helm."""
     try:
