@@ -9,6 +9,7 @@ setup(
     ],
     entry_points='''
         [console_scripts]
+        deploy-helm=deployer.scripts.deploy_helm:deploy_helm
         push-image=deployer.scripts.push_image:push_image
     ''',
 )
