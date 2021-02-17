@@ -15,7 +15,7 @@ from ..utils import *
 @click.argument("deploy-env", default=os.getenv("BITBUCKET_DEPLOYMENT_ENVIRONMENT"))
 @click.option("--gcp-cluster", "-g", default="elasticsearch-cluster", help="gcp k8s cluster name")
 @click.option("--aws-credentials", "-c", default="/tmp/aws-credentials.json", help="the aws credentials csv file")
-@click.option("--aws-region", "-r", default="us-west-2", help="the aws region")
+@click.option("--aws-region", "-r", default="us-east-2", help="the aws region")
 @click.option("--aws-cluster", "-a", default="production", help="aws k8s cluster name")
 @click.option("--deploy-type", "-d", default="gcp", help="type of deploy. Can be gcp, aws or multi")
 @click.option("--gcp-zone", "-r", default="us-central1-a", help="the gcp zone")
