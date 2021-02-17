@@ -12,7 +12,7 @@ from ..utils import *
 @click.argument("tag")
 @click.argument("gcp-project")
 @click.argument("gcp-credentials", default=os.getenv("GOOGLE_APPLICATION_CREDENTIALS"))
-@click.option("--base-repo", "-b", default="us.gcr.io", help="docker base repository")
+@click.option("--base-repo", "-b", default="us.gcr.io/volanty", help="docker base repository")
 @click.option("--deploy-args", "-a", default="", help="deploy arguments")
 def push_image(name, tag, gcp_project, gcp_credentials, base_repo, deploy_args):
     """Tool to push your docker image to grc."""
