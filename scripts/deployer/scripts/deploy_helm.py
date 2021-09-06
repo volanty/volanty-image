@@ -46,7 +46,7 @@ def install_helm_on_aws(aws_credentials, aws_region, aws_cluster, chart_name, ch
 
 def install_helm(chart_name, chart_file):
     click.echo(f"Helm deploy {chart_name} {chart_file}")
-    sh(f"helm upgrade {chart_name} {chart_file} --install")
+    sh(f"helm upgrade {chart_name} {chart_file} --install --atomic")
 
 def helm_package_and_push(chart_name, app_version, deploy_env):
     gcs_bucket_name = f"gs://volanty-charts-{deploy_env}/{chart_name}"
