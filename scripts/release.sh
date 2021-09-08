@@ -43,7 +43,7 @@ helm gcs push "$chart_file" private --force
 # Deploy on GCP
 if [ "$deployType" == "GCP" ] || [ "$deployType" == "MULTI" ]; then
     echo "Deploy on GCP"
-    helm upgrade "${CHART_NAME}" "${chart_file}" --install
+    helm upgrade "${CHART_NAME}" "${chart_file}" --install --atomic
 fi
 
 # Deploy on AWS
@@ -59,5 +59,5 @@ if [ "$deployType" == "AWS" ] || [ "$deployType" == "MULTI" ]; then
     aws configure set aws_secret_access_key ${aws_secret_access_key}
     aws configure set default.region ${region}
     aws eks update-kubeconfig --name "${awsCluster}"
-    helm upgrade "${CHART_NAME}" "${chart_file}" --install
+    helm upgrade "${CHART_NAME}" "${chart_file}" --install --atomic
 fi
